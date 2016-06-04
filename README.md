@@ -25,7 +25,7 @@ sudo apt-get install libcurl3
 ```
 Otherwise you can compile:
 ```sh
-$ cd ~/ffmpeg_sources
+$ cd ~/sources_code
 $ wget https://curl.haxx.se/download/curl-7.49.1.tar.gz
 $ tar xzvf curl-7.49.1.tar.gz
 $ cd curl-*
@@ -41,7 +41,7 @@ sudo apt-get install yasm
 ```
 Otherwise you can compile:
 ```sh
-$ cd ~/ffmpeg_sources
+$ cd ~/sources_code
 $ wget http://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz
 $ tar xzvf yasm-1.3.0.tar.gz
 $ cd yasm-1.3.0
@@ -57,7 +57,7 @@ $ sudo apt-get install libx264-dev
 ```
 Otherwise you can compile:
 ```sh
-$ cd ~/ffmpeg_sources
+$ cd ~/sources_code
 $ wget http://download.videolan.org/pub/x264/snapshots/last_x264.tar.bz2
 $ tar xjvf last_x264.tar.bz2
 $ cd x264-snapshot*
@@ -69,7 +69,7 @@ $ sudo make install
 
 Requires ffmpeg to be configured with --enable-libfdk-aac (and --enable-nonfree if you also included --enable-gpl).
 ```sh
-$ cd ~/ffmpeg_sources
+$ cd ~/sources_code
 $ wget -O fdk-aac.tar.gz https://github.com/mstorsjo/fdk-aac/tarball/master
 $ tar xzvf fdk-aac.tar.gz
 $ cd mstorsjo-fdk-aac*
@@ -87,7 +87,7 @@ $ sudo apt-get install libmp3lame-dev
 Otherwise you can compile:
 ```sh
 $ sudo apt-get install nasm
-$ cd ~/ffmpeg_sources
+$ cd ~/sources_code
 $ wget http://downloads.sourceforge.net/project/lame/lame/3.99/lame-3.99.5.tar.gz
 $ tar xzvf lame-3.99.5.tar.gz
 $ cd lame-3.99.5
@@ -103,7 +103,7 @@ $ sudo apt-get install libopus-dev
 ```
 Otherwise you can compile:
 ```sh
-$ cd ~/ffmpeg_sourc
+$ cd ~/sources_code
 $ wget http://downloads.xiph.org/releases/opus/opus-1.1.2.tar.gz
 $ tar xzvf opus-1.1.2.tar.gz
 $ cd opus-1.1.2
@@ -115,7 +115,7 @@ $ sudo make install
 
 Requires ffmpeg to be configured with --enable-libvpx.
 ```sh
-$ cd ~/ffmpeg_sources
+$ cd ~/sources_code
 $ wget http://storage.googleapis.com/downloads.webmproject.org/releases/webm/libvpx-1.5.0.tar.bz2
 $ tar xjvf libvpx-1.5.0.tar.bz2
 $ cd libvpx-1.5.0
@@ -125,7 +125,7 @@ $ sudo make install
 ```
 - Install ffmpeg
 ```sh
-cd ~/ffmpeg_sources
+cd ~/sources_code
 $ wget http://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2
 $ tar xjvf ffmpeg-snapshot.tar.bz2
 $ cd ffmpeg
