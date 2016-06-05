@@ -28,7 +28,7 @@ $ mkdir ~/sources_code
 - Install Curl
 Run on command line:
 ```sh
-sudo apt-get install libcurl3
+$ sudo apt-get install libcurl3
 ```
 Otherwise you can compile:
 ```sh
@@ -44,7 +44,7 @@ $ sudo make install
 
 If your repository offers a yasm package ≥ 1.2.0 then you can install that instead of compiling:
 ```sh
-sudo apt-get install yasm
+$ sudo apt-get install yasm
 ```
 Otherwise you can compile:
 ```sh
