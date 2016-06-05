@@ -1,5 +1,7 @@
 # Descriptions
 
+This project ...
+
 ### Version
 0.1
 
@@ -156,6 +158,7 @@ cd ~/sources_code
 $ git clone https://github.com/phutv-viosoft/VideoStreaming.git
 ```
 - modify some of defined in source
+
 Open main.c file and changes as folow:
 ```sh
 #define MY_CAMERA		"RPCAMERA_00001"      /* Name of your camera */
@@ -163,7 +166,7 @@ Open main.c file and changes as folow:
 #define STREAM_PIX_FMT    	AV_PIX_FMT_YUV420P    /* default pix_fmt */
 #define WIDTH			320
 #define HEIGHT			240
-#define SERVER_ADDRESS		"192.168.0.103:8080/" /* Server AddressIP*/
+#define SERVER_ADDRESS		"192.168.0.103:8080/" /* Server AddressIP : Port*/
 #define DEVICE_NAME		"/dev/video0"         /* Device name of webcame*/
 ```
 - Compile && rung
@@ -172,4 +175,4 @@ $ cd cd ~/sources_code/VideoStreaming
 $ make
 $ ./rtspServer
 ```
-*************** thank you..! *****************
+#############################################################################################################
