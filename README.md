@@ -2,7 +2,12 @@
 
 ### Version
 0.1
-# Get the Dependencies
+
+
+###############################################################################################
+# Compile && Installation source code
+
+#### Get the Dependencies
 Copy and paste the whole code box for each step. First install the dependencies:
 ```sh
 $ sudo apt-get update
@@ -144,3 +149,27 @@ $ ./configure \
 $ make
 $ sudo make install
 ```
+#### Compile && run source code
+- Clone source code from [github - media streaming](https://github.com/phutv-viosoft/VideoStreaming.git)
+```sh
+cd ~/sources_code
+$ git clone https://github.com/phutv-viosoft/VideoStreaming.git
+```
+- modify some of defined in source
+Open main.c file and changes as folow:
+```sh
+#define MY_CAMERA		"RPCAMERA_00001"      /* Name of your camera */
+#define STREAM_FRAME_RATE 	25                    /* 25 images/s */
+#define STREAM_PIX_FMT    	AV_PIX_FMT_YUV420P    /* default pix_fmt */
+#define WIDTH			320
+#define HEIGHT			240
+#define SERVER_ADDRESS		"192.168.0.103:8080/" /* Server AddressIP*/
+#define DEVICE_NAME		"/dev/video0"         /* Device name of webcame*/
+```
+- Compile && rung
+```sh
+$ cd cd ~/sources_code/VideoStreaming
+$ make
+$ ./rtspServer
+```
+*************** thank you..! *****************
