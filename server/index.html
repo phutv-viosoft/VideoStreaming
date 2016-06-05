@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>PhuTran, Video surveillance </title>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/touchTouch.css">
+<link rel="stylesheet" href="css/stuck.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery.js"></script>
+<script src="js/jquery-migrate-1.1.1.js"></script>
+<script src="js/script.js"></script>
+<script src="js/superfish.js"></script>
+<script src="js/jquery.equalheights.js"></script>
+<script src="js/jquery.mobilemenu.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/tmStickUp.js"></script>
+<script src="js/jquery.ui.totop.js"></script>
+<script src="js/touchTouch.jquery.js"></script>
+<script>
+ $(document).ready(function(){
+  $().UItoTop({ easingType: 'easeOutQuart' });
+  $('#stuck_container').tmStickUp({});
+  $('.gallery .gall_item').touchTouch();
+});
+</script>
+<style type="text/css">
+		#videoCanvas {
+			/* Always stretch the canvas to 640x480, regardless of its
+			internal size. */
+			width: 320px;
+			height: 240px;
+		}
+	</style>
+<!--[if lt IE 9]>
+ <div style=' clear: both; text-align:center; position: relative;'>
+   <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+     <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+   </a>
+</div>
+<script src="js/html5shiv.js"></script>
+<link rel="stylesheet" media="screen" href="css/ie.css">
+<![endif]-->
+</head>
+<body id="top">
+<!--==============================
+              header
+=================================-->
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <section id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+        <h1>
+          <a href="index.html">
+            <img src="images/logo.png" alt="Logo alt">
+          </a>
+        </h1>
+          <div class="navigation ">
+            <nav>
+              <ul class="sf-menu">
+               <li><a href="index.html">About</a></li>
+               <li><a href="index.html">Services</a></li>
+               <li><a href="index.html">Blog</a></li>
+               <li><a href="index.html">Contacts</a></li>
+             </ul>
+            </nav>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+
+<!-- <canvas id="videoCanvas" width="320" height="240"></canvas> -->
+<!--=====================
+          Content
+======================-->
+<section class="content"><div class="ic">More Website Templates @ TemplateMonster.com - June 16, 2014!</div>
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">
+        <h3 class="ta__center">|video surveillance|</h3>
+      </div>
+      <div class="gallery">
+		  <!-- <Camera 1> -->
+        <div class="grid_4">
+	  <canvas id="videoCanvas1" width="320" height="240"></canvas>
+	  <script type="text/javascript" src="jsmpg.js"></script>
+	  <script type="text/javascript">
+		  // Setup the WebSocket connection and start the player
+		  var client = new WebSocket( 'ws://192.168.1.129:9554/' );
+		  var canvas = document.getElementById('videoCanvas1');
+		  var player = new jsmpeg(client, {canvas:canvas});
+	  </script>
+	  <div class="text1"><a href="#">Camera 1 </a></div>
+	  <div class="button-group">
+	      <button id="cam1_up">up</button>
+	      <button id="cam1_down">down</button>
+	      <button id="cam1_left">letf</button>
+	      <button id="cam1_right">right</button>
+	  </div>
+	  <div>--------------------------------------</div>
+	  <div> Quality:  <button id="cam1_sub" >-</button>..<button id="cam1_add">+</button> [ <a id="camera1"></a> %]</div>
+	  <div> Codec:  MPEG1 Video</div>
+	  <script> document.getElementById("camera1").innerHTML = '100';</script>
+<!-- 	  <div> Video: <a id="camera1"></a></div> -->
+	  
+        </div>
+		  <!-- <Camera 2> -->
+        <div class="grid_4">
+        <canvas id="videoCanvas2" width="320" height="240"></canvas>
+	<script type="text/javascript" src="jsmpg.js"></script>
+	<script type="text/javascript">
+		// Setup the WebSocket connection and start the player
+		var client = new WebSocket( 'ws://192.168.0.115:9555/' );
+		var canvas = document.getElementById('videoCanvas2');
+		var player = new jsmpeg(client, {canvas:canvas});
+	</script>
+	<div class="text1"><a href="#">Camera 2 </a></div>
+	<div class="button-group" data-button-group-options='{ "behavior": "radio" }'>
+	  <button class="button">up</button>
+	  <button class="button">down</button>
+	  <button class="button">letf</button>
+	  <button class="button">right</button>
+	</div>
+	<div> Codec: MPEG1</div>
+	<div> Rate: </div>
+        </div>
+        
+        <div class="grid_4">
+        <canvas id="videoCanvas3" width="320" height="240"></canvas>
+	<script type="text/javascript" src="jsmpg.js"></script>
+	<script type="text/javascript">
+		// Setup the WebSocket connection and start the player
+		var client = new WebSocket( 'ws://192.168.0.115:9556/' );
+		var canvas = document.getElementById('videoCanvas3');
+		var player = new jsmpeg(client, {canvas:canvas});
+	</script>
+	<div class="text1"><a href="#">Camera 3 </a></div>
+	<div class="button-group" data-button-group-options='{ "behavior": "radio" }'>
+	  <button class="button">up</button>
+	  <button class="button">down</button>
+	  <button class="button">letf</button>
+	  <button class="button">right</button>
+	</div>
+	<div> Codec: MPEG1</div>
+	<div> Rate: </div>
+        </div>
+<!--        <div class="grid_4">
+          <a href="images/big3.jpg" class="gall_item"><img src="images/page3_img3.jpg" alt=""></a>
+          <div class="text1"><a href="#">Saeerra Gertolo Lertor</a></div>
+          Nametconsecteturertolom  werto monikosit amet ultricies erateroli me rutruma auctorerttu terolp saderttor
+        </div>-->
+        <div class="clear sep__4"></div>
+        <div class="grid_4">
+        <canvas id="videoCanvas4" width="320" height="240"></canvas>
+	<script type="text/javascript" src="jsmpg.js"></script>
+	<script type="text/javascript">
+		// Setup the WebSocket connection and start the player
+		var client = new WebSocket( 'ws://192.168.0.115:9557/' );
+		var canvas = document.getElementById('videoCanvas4');
+		var player = new jsmpeg(client, {canvas:canvas});
+	</script>
+	<div class="text1"><a href="#">Camera 4 </a></div>
+	<div> Codec: MPEG1</div>
+	<div> Rate: </div>
+        </div>
+        
+       <div class="grid_4">
+        <canvas id="videoCanvas5" width="320" height="240"></canvas>
+	<script type="text/javascript" src="jsmpg.js"></script>
+	<script type="text/javascript">
+		// Setup the WebSocket connection and start the player
+		var client = new WebSocket( 'ws://192.168.0.115:9001/' );
+		var canvas = document.getElementById('videoCanvas5');
+		var player = new jsmpeg(client, {canvas:canvas});
+	</script>
+	<div class="text1"><a href="#">Camera 5 </a></div>
+	<div> Codec: MPEG1</div>
+	<div> Rate: </div>
+        </div>
+        
+        <div class="grid_4">
+        <canvas id="videoCanvas6" width="320" height="240"></canvas>
+	<script type="text/javascript" src="jsmpg.js"></script>
+	<script type="text/javascript">
+		// Setup the WebSocket connection and start the player
+		var client = new WebSocket( 'ws://192.168.0.115:9001/' );
+		var canvas = document.getElementById('videoCanvas6');
+		var player = new jsmpeg(client, {canvas:canvas});
+	</script>
+	<div class="text1"><a href="#">Camera 6 </a></div>
+	<div> Codec: MPEG1</div>
+	<div> Rate: </div>
+        </div>
+        
+        <div class="clear sep__4"></div>
+        <div class="grid_4">
+        <canvas id="videoCanvas7" width="320" height="240"></canvas>
+	<script type="text/javascript" src="jsmpg.js"></script>
+	<script type="text/javascript">
+		// Setup the WebSocket connection and start the player
+		var client = new WebSocket( 'ws://192.168.0.115:9001/' );
+		var canvas = document.getElementById('videoCanvas7');
+		var player = new jsmpeg(client, {canvas:canvas});
+	</script>
+	<div class="text1"><a href="#">Camera 7 </a></div>
+	<div> Codec: MPEG1</div>
+	<div> Rate: </div>
+        </div>
+        
+        <div class="grid_4">
+        <canvas id="videoCanvas8" width="320" height="240"></canvas>
+	<script type="text/javascript" src="jsmpg.js"></script>
+	<script type="text/javascript">
+		// Setup the WebSocket connection and start the player
+		var client = new WebSocket( 'ws://192.168.0.115:9001/' );
+		var canvas = document.getElementById('videoCanvas8');
+		var player = new jsmpeg(client, {canvas:canvas});
+	</script>
+	<div class="text1"><a href="#">Camera 8 </a></div>
+	<div> Codec: MPEG1</div>
+	<div> Rate: </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var cam1_quality = 100;
+    var cam2_quality = 100;
+    var cam3_quality = 100;
+    var cam4_quality = 100;
+    var cam5_quality = 100;
+    var cam6_quality = 100;
+    var cam7_quality = 100;
+    var cam8_quality = 100;
+//     var cam9_quality = 100;
+    
+    document.getElementById("cam1_up").addEventListener("click", function() {myFunction("cam1", "up");});
+    document.getElementById("cam1_down").addEventListener("click", function() {myFunction("cam1", "down");});
+    document.getElementById("cam1_left").addEventListener("click", function() {myFunction("cam1", "left");});
+    document.getElementById("cam1_right").addEventListener("click", function() {myFunction("cam1", "right");});
+    document.getElementById("cam1_sub").addEventListener("click", function() {myFunction("cam1", "sub");});
+    document.getElementById("cam1_add").addEventListener("click", function() {myFunction("cam1", "add");});
+    
+    document.getElementById("cam2_up").addEventListener("click", function() {myFunction("cam2", "up");});
+    document.getElementById("cam2_down").addEventListener("click", function() {myFunction("cam2", "down");});
+    document.getElementById("cam2_left").addEventListener("click", function() {myFunction("cam2", "left");});
+    document.getElementById("cam2_right").addEventListener("click", function() {myFunction("cam2", "right");});
+    document.getElementById("cam2_sub").addEventListener("click", function() {myFunction("cam2", "sub");});
+    document.getElementById("cam2_add").addEventListener("click", function() {myFunction("cam2", "add");});
+    
+    document.getElementById("cam3_up").addEventListener("click", function() {myFunction("cam3", "up");});
+    document.getElementById("cam3_down").addEventListener("click", function() {myFunction("cam3", "down");});
+    document.getElementById("cam3_left").addEventListener("click", function() {myFunction("cam3", "left");});
+    document.getElementById("cam3_right").addEventListener("click", function() {myFunction("cam3", "right");});
+    document.getElementById("cam3_sub").addEventListener("click", function() {myFunction("cam3", "sub");});
+    document.getElementById("cam3_add").addEventListener("click", function() {myFunction("cam3", "add");});
+    
+    
+    function myFunction(cam, cmd) {
+	switch(cam){
+	  case "cam1":
+	    if(cmd == "sub" || cmd == "add"){
+		  cam1_quality += 10;
+		  if(cam1_quality > 100)
+			 cam1_quality = 100;
+		  document.getElementById("camera1").innerHTML = cam1_quality;
+	    }else{
+		  cam1_quality -= 10;
+		  if(cam1_quality < 40)
+			cam1_quality = 40;
+		  document.getElementById("camera1").innerHTML = cam1_quality;
+	    }  
+	    break;
+	  default:
+	    break;
+	}	
+    }
+  </script>
+</section>
+<!--==============================
+              footer
+=================================-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">
+        <div class="socials">
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-google-plus"></a>
+          <a href="#" class="fa fa-youtube-play"></a>
+        </div>
+        <div class="copyright">Embedded Networking Lab &copy; <span id="copyright-year"></span> | <a href="#">Privacy Policy</a> <div>Website designed by <a href="https://sites.google.com/site/wsan411//" rel="nofollow">phutvbk@gmail.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

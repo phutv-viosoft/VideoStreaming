@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=640, initial-scale=1"/>
+	<title>Lab411 - School of electronics and telecommunications</title>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+
+	<style type="text/css">
+		body {
+			background: #CCFFFF;
+			text-align: center;
+			margin-top: 1px;
+		}
+		#videoCanvas {
+			/* Always stretch the canvas to 640x480, regardless of its
+			internal size. */
+			margin-top: 10px;
+			width: 640px;
+			height: 480px;
+		}
+		#footer {
+			width:100%;
+			height:40px;
+			position:absolute;
+			bottom:0;
+			left:0;
+		}
+	</style>
+</head>
+<body>
+	<!-- The Canvas size specified here is the "initial" internal resolution. jsmpeg will
+		change this internal resolution to whatever the source provides. The size the
+		canvas is displayed on the website is dictated by the CSS style.
+	-->
+	<div id="header"> 
+		<h1>HỆ THỐNG CAMERA GIÁM SÁT</h1>
+		<select id="mySelect" size="1" onchange="choiceCamera()">
+			<option value="none">Lựa chọn camera để xem</option>
+			<option value="RPCAMERA_00001">Camera 001</option>
+			<option value="RPCAMERA_00002">Camera 002</option>
+			<option value="RPCAMERA_00003">Camera 003</option>
+			<option value="RPCAMERA_00004">Camera 004</option>
+			<option value="RPCAMERA_00005">Camera 005</option>
+			<option value="RPCAMERA_00006">Camera 006</option>
+		</select>
+		<button id="view" onclick="showCamera()">Xem Video</button>
+		<button id="view" onclick="terminalCamera()">Kết thúc</button>
+	</div>
+	<div>
+		  <canvas id="videoCanvas">
+	  <!--		<p>
+				  Please use a browser that supports the Canvas Element, like
+				  <a href="http://www.google.com/chrome">Chrome</a>,
+				  <a href="http://www.mozilla.com/firefox/">Firefox</a>,
+				  <a href="http://www.apple.com/safari/">Safari</a> or Internet Explorer 10
+			  </p>-->
+		  </canvas>
+	</div>
+	<div id="footer"> Copyright&copy;2016 Privacy Policy | <a href="#">Embedded Networking Lab</a>
+		<p>HaNoi university of science and technology</p>
+	</div>
+	
+	<!-- begin javascript	 -->
+	<script type="text/javascript" src="jsmpg.js"></script>
+	<script type="text/javascript">
+		// Setup the WebSocket connection and start the player
+// 		var clientVideo = new WebSocket('ws://14.181.43.93:8666/');
+		var clientVideo = new WebSocket('ws://192.168.0.103:9001/');
+		var canvas = document.getElementById('videoCanvas');
+		var player = new jsmpeg(clientVideo, {canvas:canvas});
+		//For selected camera
+		var selectedCamera = "none";
+		
+		//define functions
+		function choiceCamera() {
+			selectedCamera = document.getElementById("mySelect").value;			
+			//document.getElementById("demo").innerHTML = "Bạn đã chọn: " + x;
+		}
+		function showCamera() {
+			
+			if(selectedCamera == "none")
+				alert("Bạn cần chon 1 camera truoc khi xem!");
+			else{
+				//context.clearRect(0, 0, canvas.width, canvas.height);
+				clientVideo.send(selectedCamera);
+			}
+		}
+		function terminalCamera() {
+			//selectedCamera = "none";
+			clientVideo.send("CANCEL");
+			location.reload();
+			//document.getElementById("demo").innerHTML = "Bạn đã chọn: " + x;
+		}
+	</script>
+</body>
+</html>
